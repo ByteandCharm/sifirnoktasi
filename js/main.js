@@ -9,14 +9,25 @@
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const GSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+
+  /* ---------- STATIC FALLBACK (no GSAP or reduced motion) ---------- */
+  function applyStatic() {
+    $$('.reveal-mask, .hero-title .line-inner, .section-title .line-inner, .section-reveal').forEach(el => (el.style.opacity = 1));
+    $$('.factor-bar i').forEach((bar) => {
+      bar.style.width = bar.style.getPropertyValue('--w');
+    });
+    const rg = $('#rgFill');
+    const rgNum = $('#riskScoreNum');
+    const rgLabel = $('#riskScoreLabel');
+    if (rgNum) rgNum.textContent = '62';
+    if (rgLabel) rgLabel.textContent = '⚠ Yüksek Risk';
+    if (rg) rg.style.strokeDashoffset = 596.9 * 0.38;
+  }
 
   /* ---------- HERO ---------- */
   function initHeroAnimations() {
-    if (prefersReduced) {
-      $$('.reveal-mask, .hero-title .line-inner, .section-title .line-inner').forEach(el => (el.style.opacity = 1));
-      return;
-    }
-
+    if (!GSAP) return applyStatic();
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
     tl.from('.hero-eyebrow', { y: 24, opacity: 0, duration: 0.9 })
       .from('.hero-title .line-inner', {
@@ -30,15 +41,15 @@
       .from('.hero-phone', { y: 90, opacity: 0, rotateY: -18, duration: 1.3, ease: 'power3.out' }, '-=0.9');
   }
 
-  if (prefersReduced) {
-    $$('.reveal-mask, .hero-title .line-inner, .section-title .line-inner').forEach(el => (el.style.opacity = 1));
+  if (prefersReduced || !GSAP) {
+    applyStatic();
   } else {
     window.addEventListener('load', initHeroAnimations);
     if (document.readyState === 'complete') initHeroAnimations();
   }
 
   /* ---------- LENIS SMOOTH SCROLL ---------- */
-  if (window.Lenis && !prefersReduced) {
+  if (window.Lenis && !prefersReduced && GSAP) {
     const lenis = new Lenis({
       duration: 1.15,
       smoothWheel: true,
@@ -60,7 +71,7 @@
   }
 
   /* ---------- CUSTOM CURSOR ---------- */
-  if (!prefersReduced && window.matchMedia('(hover: hover)').matches) {
+  if (!prefersReduced && GSAP && window.matchMedia('(hover: hover)').matches) {
     const dot = $('#cursorDot');
     const ring = $('#cursorRing');
 
@@ -95,7 +106,7 @@
   });
 
   /* ---------- SCROLL REVEALS ---------- */
-  if (!prefersReduced) {
+  if (!prefersReduced && GSAP) {
     $$('.section-reveal').forEach((el) => {
       gsap.from(el, {
         y: 60,
@@ -190,7 +201,7 @@
   }
 
   /* ---------- TILT ---------- */
-  if (!prefersReduced && window.matchMedia('(hover: hover)').matches) {
+  if (!prefersReduced && GSAP && window.matchMedia('(hover: hover)').matches) {
     $$('[data-tilt]').forEach((el) => {
       el.addEventListener('mousemove', (e) => {
         const r = el.getBoundingClientRect();
@@ -248,7 +259,5 @@
   if (apkBtn) {
     apkBtn.href = 'downloads/sifirnoktasi-v1.0.0.apk';
     apkBtn.download = 'sifirnoktasi-v1.0.0.apk';
-    const label = $('.btn-label', apkBtn) || apkBtn;
-    if (label) label.textContent = 'APK\'yı İndir (60 MB)';
   }
 })();
