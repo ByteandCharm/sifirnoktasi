@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SıfırNoktası — Dijital Bağımlılığa Karşı Bilinçli Adım</title>
+<meta name="description" content="SıfırNoktası: Yapay zeka destekli, dijital bağımlılığı erken evrede tespit eden proaktif sağlık uygulaması. Android ve PC'de indir." />
+<meta property="og:title" content="SıfırNoktası — Dijital Bağımlılığa Karşı Bilinçli Adım" />
+<meta property="og:description" content="AI destekli bağımlılık riski skoru, 4 seviyeli müdahale protokolü ve aile ekosistemi." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="assets/icon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-brand">
+      <span class="preloader-dot"></span>
+      <span>SIFIRNOKTASI</span>
+    </div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preloaderFill"></div></div>
+    <div class="preloader-counter" id="preloaderCounter">0</div>
+  </div>
+</div>
+
+<!-- ===== CURSOR ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-brand-dot"></span>
+      <span>SıfırNoktası</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features" class="nav-link">Özellikler</a>
+      <a href="#risk" class="nav-link">Risk Skoru</a>
+      <a href="#protocol" class="nav-link">Protokol</a>
+      <a href="#download" class="nav-link nav-link-cta">İndir</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#features">Özellikler</a>
+    <a href="#risk">Risk Skoru</a>
+    <a href="#protocol">Protokol</a>
+    <a href="#download">İndir</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal-mask">Teknofest 2026 · Yeşilay İş Birliği</p>
+    <h1 class="hero-title">
+      <span class="line"><span class="line-inner">SIFIR</span></span>
+      <span class="line"><span class="line-inner">NOKTASI</span></span>
+    </h1>
+    <p class="hero-tagline reveal-mask">
+      Dijital bağımlılığı daha <strong>oluşmadan</strong> tespit eder,
+      psikolojik dayanıklılığını <strong>yapay zeka</strong> ile güçlendirir.
+    </p>
+    <div class="hero-cta reveal-mask">
+      <a href="#download" class="btn btn-primary">📱 Android APK İndir</a>
+      <a href="#download" class="btn btn-ghost">💻 PC'de Kur</a>
+    </div>
+    <div class="hero-meta reveal-mask">
+      <span>✦ 4 Seviyeli Müdahale</span>
+      <span>✦ AI Destek Asistanı</span>
+      <span>✦ Aile Ekosistemi</span>
+    </div>
+  </div>
+
+  <div class="hero-phone" id="heroPhone">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="ps-status">
+          <span>09:41</span>
+          <span>🔋 87%</span>
+        </div>
+        <div class="ps-greeting">
+          <p class="ps-hi">Merhaba 👋</p>
+          <p class="ps-sub">Dijital dengen nasıl?</p>
+        </div>
+        <div class="ps-gauge">
+          <svg viewBox="0 0 100 100">
+            <circle class="ps-gauge-track" cx="50" cy="50" r="40" />
+            <circle class="ps-gauge-fill" id="psGaugeFill" cx="50" cy="50" r="40" />
+          </svg>
+          <div class="ps-gauge-text"><strong>62</strong><span>Risk Skoru</span></div>
+        </div>
+        <div class="ps-chips">
+          <span class="chip chip-warn">⚠ Yüksek Risk</span>
+          <span class="chip chip-blue">🛡️ Müdahale Seviye 3</span>
+        </div>
+        <div class="ps-bars">
+          <div class="ps-bar-row"><span>Sosyal Medya</span><i><b style="width:78%"></b></i><em>2s 25dk</em></div>
+          <div class="ps-bar-row"><span>Video</span><i><b style="width:52%"></b></i><em>1s 38dk</em></div>
+          <div class="ps-bar-row"><span>Oyun</span><i><b style="width:36%"></b></i><em>1s 07dk</em></div>
+        </div>
+        <div class="ps-chat">
+          <div class="ps-msg ai">Bugün 10 dk daha az ekrana bakmaya ne dersin? 🌱</div>
+          <div class="ps-msg user">Evet, deneyelim!</div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-shadow"></div>
+  </div>
+
+  <div class="scroll-hint"><span></span></div>
+</header>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>DİJİTAL BAĞIMLILIK</span><i>✦</i>
+    <span>YAPAY ZEKA</span><i>✦</i>
+    <span>ERKEN TESPİT</span><i>✦</i>
+    <span>PSİKOLOJİK DAYANIKLILIK</span><i>✦</i>
+    <span>AİLE EKOSİSTEMİ</span><i>✦</i>
+    <span>DİJİTAL BAĞIMLILIK</span><i>✦</i>
+    <span>YAPAY ZEKA</span><i>✦</i>
+    <span>ERKEN TESPİT</span><i>✦</i>
+    <span>PSİKOLOJİK DAYANIKLILIK</span><i>✦</i>
+    <span>AİLE EKOSİSTEMİ</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ===== STATS ===== -->
+<section class="stats section-reveal">
+  <div class="stat">
+    <div class="stat-num"><span data-count="0" data-target="100">0</span><small>%</small></div>
+    <p>Proaktif erken tespit hedefi</p>
+  </div>
+  <div class="stat">
+    <div class="stat-num"><span data-count="0" data-target="4">0</span><small>seviye</small></div>
+    <p>Kişiselleştirilmiş müdahale protokolü</p>
+  </div>
+  <div class="stat">
+    <div class="stat-num"><span data-count="0" data-target="24">0</span><small>/7</small></div>
+    <p>AI destek asistanı erişimi</p>
+  </div>
+  <div class="stat">
+    <div class="stat-num"><span data-count="0" data-target="1">0</span><small>aile</small></div>
+    <p>Toplumsal mücadele ekosistemi</p>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features" id="features">
+  <div class="section-head">
+    <p class="section-kicker">Neden SıfırNoktası?</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Pasif raporlama devri bitti.</span></span>
+      <span class="line"><span class="line-inner">Artık <em>proaktif</em> koruma var.</span></span>
+    </h2>
+  </div>
+
+  <div class="feature-grid">
+    <article class="feature-card section-reveal" data-tilt>
+      <div class="feature-icon">🧠</div>
+      <h3>AI Risk Skoru</h3>
+      <p>Telefon kullanım desenlerini analiz eden algoritma, bağımlılık riskini 0-100 arasında hesaplar ve erken uyarı verir.</p>
+      <div class="feature-tag">Yapay Zeka</div>
+    </article>
+    <article class="feature-card section-reveal" data-tilt>
+      <div class="feature-icon">🛡️</div>
+      <h3>4 Seviyeli Protokol</h3>
+      <p>Farkındalıktan krize kadar dört kademeli müdahale; her kullanıcıya özel ve kademeli iyileşme süreci.</p>
+      <div class="feature-tag">Kişiselleştirme</div>
+    </article>
+    <article class="feature-card section-reveal" data-tilt>
+      <div class="feature-icon">🤖</div>
+      <h3>AI Psikolojik Destek</h3>
+      <p>Risk seviyene göre yanıt veren proaktif asistan; motivasyon, öneri ve acil durumlarda yönlendirme.</p>
+      <div class="feature-tag">7/24</div>
+    </article>
+    <article class="feature-card section-reveal" data-tilt>
+      <div class="feature-icon">👨‍👩‍👧‍👦</div>
+      <h3>Aile Ekosistemi</h3>
+      <p>Yakınlarının risk skorunu takip et, birlikte mücadele et. Bağımlılıkla mücadeleyi toplumsal boyuta taşı.</p>
+      <div class="feature-tag">Toplum</div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== RISK SCORE ===== -->
+<section class="risk" id="risk">
+  <div class="section-head">
+    <p class="section-kicker">Risk Analizi</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Bağımlılık riskin</span></span>
+      <span class="line"><span class="line-inner">artık <em>sayısal</em>.</span></span>
+    </h2>
+  </div>
+
+  <div class="risk-body">
+    <div class="risk-gauge-wrap">
+      <svg class="risk-gauge" viewBox="0 0 220 220">
+        <circle class="rg-track" cx="110" cy="110" r="95" />
+        <circle class="rg-fill" id="rgFill" cx="110" cy="110" r="95" />
+      </svg>
+      <div class="risk-gauge-center">
+        <strong id="riskScoreNum">0</strong>
+        <span>/ 100</span>
+        <p id="riskScoreLabel">Analiz ediliyor…</p>
+      </div>
+    </div>
+    <div class="risk-factors">
+      <div class="factor section-reveal"><div class="factor-top"><span>Günlük Ekran Süresi</span><b>7 sa 24 dk</b></div><div class="factor-bar"><i style="--w:78%"></i></div></div>
+      <div class="factor section-reveal"><div class="factor-top"><span>Telefonu El Alma</span><b>48 kez / gün</b></div><div class="factor-bar"><i style="--w:56%"></i></div></div>
+      <div class="factor section-reveal"><div class="factor-top"><span>Gece Kullanımı</span><b>2 sa 15 dk</b></div><div class="factor-bar"><i style="--w:63%"></i></div></div>
+      <div class="factor section-reveal"><div class="factor-top"><span>Uygulama Çeşitliliği</span><b>8 uygulama</b></div><div class="factor-bar"><i style="--w:34%"></i></div></div>
+      <p class="risk-note">AI algoritması dört faktörü birleştirir; her faktör kişiselleştirilmiş müdahale protokolünü tetikler.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROTOCOL ===== -->
+<section class="protocol" id="protocol">
+  <div class="section-head">
+    <p class="section-kicker">Müdahale Protokolü</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Dört adımda</span></span>
+      <span class="line"><span class="line-inner"><em>yeniden</em> kontrol.</span></span>
+    </h2>
+  </div>
+
+  <div class="protocol-list">
+    <div class="protocol-row section-reveal" data-tilt>
+      <div class="protocol-num">01</div>
+      <div class="protocol-body">
+        <h3>Farkındalık</h3>
+        <p>Kullanım desenlerini keşfet, dijital alışkanlıklarının farkına var. Günlük bildirimlerle bilinçlen.</p>
+      </div>
+      <div class="protocol-tag">🌱 Düşük Risk</div>
+    </div>
+    <div class="protocol-row section-reveal" data-tilt>
+      <div class="protocol-num">02</div>
+      <div class="protocol-body">
+        <h3>Sınırlama</h3>
+        <p>Uygulama bazlı süre limitleri, odak modu ve pomodoro molaları ile tüketimini kontrol altına al.</p>
+      </div>
+      <div class="protocol-tag">⚖️ Orta Risk</div>
+    </div>
+    <div class="protocol-row section-reveal" data-tilt>
+      <div class="protocol-num">03</div>
+      <div class="protocol-body">
+        <h3>Müdahale</h3>
+        <p>AI asistan ile günlük check-in, Yeşilay danışmanlık yönlendirmesi ve 25 günlük yapılandırılmış detoks.</p>
+      </div>
+      <div class="protocol-tag">🛡️ Yüksek Risk</div>
+    </div>
+    <div class="protocol-row section-reveal" data-tilt>
+      <div class="protocol-num">04</div>
+      <div class="protocol-body">
+        <h3>Kriz</h3>
+        <p>Aile üyelerine anlık bildirim, psikolog randevu yönlendirmesi ve 7/24 kriz hattı bilgisi devreye girer.</p>
+      </div>
+      <div class="protocol-tag">🚨 Kritik Risk</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI SECTION ===== -->
+<section class="ai-section">
+  <div class="ai-copy">
+    <p class="section-kicker">AI Destek</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Sana sorulmadan</span></span>
+      <span class="line"><span class="line-inner"><em>yanıtlar.</em></span></span>
+    </h2>
+    <p class="ai-desc section-reveal">
+      SıfırNoktası AI asistanı; risk seviyene göre proaktif mesajlar gönderir,
+      motivasyonun düştüğü anı yakalar, öneriler sunar ve kriz anında seni
+      profesyonel destek hattına yönlendirir.
+    </p>
+    <ul class="ai-list">
+      <li class="section-reveal">✦ Risk seviyene özel günlük mesajlar</li>
+      <li class="section-reveal">✦ Duygu durumuna göre uyarlanan destek</li>
+      <li class="section-reveal">✦ Acil durumda 115 / 183 hatlarına yönlendirme</li>
+    </ul>
+  </div>
+
+  <div class="chat-mock section-reveal">
+    <div class="chat-header">
+      <span class="chat-avatar">🤖</span>
+      <div><strong>SıfırNoktası AI</strong><p><i class="online-dot"></i> Çevrimiçi</p></div>
+    </div>
+    <div class="chat-body">
+      <div class="chat-msg ai">Merhaba! Bugün ekran süren hedefinin biraz üzerinde. 🧐</div>
+      <div class="chat-msg user">Biliyorum… işten sonra video izlemeye başladım.</div>
+      <div class="chat-msg ai">Anlıyorum. 10 dakikalık bir yürüyüş ve sonra "Odak Modu" nasıl olur? 🌿</div>
+      <div class="chat-msg ai typing"><i></i><i></i><i></i></div>
+    </div>
+    <div class="chat-input"><span>Mesajını yaz…</span><b>➤</b></div>
+  </div>
+</section>
+
+<!-- ===== FAMILY ===== -->
+<section class="family">
+  <div class="family-orbit-wrap">
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+    <div class="orbit-center">👨‍👩‍👧‍👦<span>Ailem</span></div>
+    <div class="orbit-member m1">👩<span>Anne · 35</span></div>
+    <div class="orbit-member m2">👨<span>Baba · 28</span></div>
+    <div class="orbit-member m3">🧑<span>Kardeş · 72 ⚠</span></div>
+  </div>
+  <div class="family-copy">
+    <p class="section-kicker">Aile Ekosistemi</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Yalnız değilsin.</span></span>
+      <span class="line"><span class="line-inner">Ailen <em>seninle</em>.</span></span>
+    </h2>
+    <p class="ai-desc section-reveal">
+      Aile üyelerinin risk skorlarını gör, düşük riskli üyeler birbirine ilham olsun.
+      Yüksek risk anında aileye anlık bildirim gider. Bağımlılıkla mücadele,
+      artık toplumsal bir hareket.
+    </p>
+    <a href="#download" class="btn btn-primary section-reveal">Aileni Bağla →</a>
+  </div>
+</section>
+
+<!-- ===== DOWNLOAD ===== -->
+<section class="download" id="download">
+  <div class="section-head">
+    <p class="section-kicker">İndir &amp; Kur</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Her cihazda.</span></span>
+      <span class="line"><span class="line-inner"><em>Herkes için.</em></span></span>
+    </h2>
+    <p class="download-sub section-reveal">Android APK veya web uygulaması — cihazına en kolay gelen yolu seç.</p>
+  </div>
+
+  <div class="download-grid">
+    <div class="download-card android section-reveal" data-tilt>
+      <div class="dl-icon">🤖</div>
+      <h3>Android APK</h3>
+      <p>Tek dosya, hızlı kurulum. APK'yı indir, "Bilinmeyen kaynaklar" iznini ver ve kurulumu tamamla.</p>
+      <a href="downloads/sifirnoktasi-v1.0.0.apk" class="btn btn-primary btn-block" id="apkBtn">⬇ APK'yı İndir</a>
+      <ul class="dl-steps">
+        <li><b>1</b> APK dosyasını indir</li>
+        <li><b>2</b> Ayarlar → Bilinmeyen kaynaklara izin ver</li>
+        <li><b>3</b> Dosyaya dokun ve "Kur" de</li>
+      </ul>
+    </div>
+
+    <div class="download-card pc section-reveal" data-tilt>
+      <div class="dl-icon">💻</div>
+      <h3>PC &amp; Tüm Cihazlar</h3>
+      <p>Web uygulamasını tarayıcında aç; Android, Windows, Mac ve Linux'ta tek tıkla ana ekrana kur.</p>
+      <a href="app/" class="btn btn-ghost-dark btn-block" id="pwaBtn">🌐 Uygulamayı Aç</a>
+      <ul class="dl-steps">
+        <li><b>1</b> Uygulamayı aç</li>
+        <li><b>2</b> Tarayıcı adres çubuğundaki "Kur" simgesine bas</li>
+        <li><b>3</b> Ana ekranında yerini alsın, çevrimdışı çalışsın</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="download-qr section-reveal">
+    <div class="qr-box"><div id="qrcode"></div></div>
+    <div>
+      <h3>Telefonunla tara 📲</h3>
+      <p>Kameranı QR koda tut, PWA uygulaması anında açılsın — hiç dosya indirmeden.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="section-head">
+    <p class="section-kicker">Sık Sorulanlar</p>
+    <h2 class="section-title">
+      <span class="line"><span class="line-inner">Merak edilenler</span></span>
+      <span class="line"><span class="line-inner"><em>cevaplandı.</em></span></span>
+    </h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item section-reveal">
+      <button class="faq-q">SıfırNoktası verilerimi nasıl korur?<span class="faq-arrow">↓</span></button>
+      <div class="faq-a"><p>Tüm veriler cihazında şifreli saklanır; risk skoru ve kullanım desenleri üçüncü taraflarla paylaşılmaz. Aile ekosistemi yalnızca senin onay verdiğin üyelerle senkronize olur.</p></div>
+    </div>
+    <div class="faq-item section-reveal">
+      <button class="faq-q">Uygulama ücretsiz mi?<span class="faq-arrow">↓</span></button>
+      <div class="faq-a"><p>Evet. SıfırNoktası, Teknofest 2026 sosyal girişim projesi olarak tüm temel özellikleri ücretsiz sunar.</p></div>
+    </div>
+    <div class="faq-item section-reveal">
+      <button class="faq-q">Risk skorunu kim görüyor?<span class="faq-arrow">↓</span></button>
+      <div class="faq-a"><p>Yalnızca sen ve senin davet ettiğin aile üyelerin. Skor, profesyonel bir tanı değildir; bilinçlenme ve erken farkındalık aracıdır.</p></div>
+    </div>
+    <div class="faq-item section-reveal">
+      <button class="faq-q">Kriz seviyesinde ne oluyor?<span class="faq-arrow">↓</span></button>
+      <div class="faq-a"><p>Uygulama, onayınla aile üyelerine bildirim gönderir; Yeşilay danışma hattı (115), psikolojik destek hattı (183) ve acil durum hattına (112) tek dokunuşla yönlendirir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="nav-brand-dot"></span>
+      <strong>SıfırNoktası</strong>
+      <p>Dijital bağımlılığa karşı bilinçli adım.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Uygulama</h4>
+        <a href="#features">Özellikler</a>
+        <a href="#risk">Risk Skoru</a>
+        <a href="#protocol">Protokol</a>
+        <a href="#download">İndir</a>
+      </div>
+      <div class="footer-col">
+        <h4>Destek</h4>
+        <a href="#faq">SSS</a>
+        <a href="https://www.yesilay.org.tr" target="_blank" rel="noopener">Yeşilay</a>
+        <a href="https://www.teknofest.org" target="_blank" rel="noopener">Teknofest</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kriz Hattı</h4>
+        <a href="tel:115">Yeşilay: 115</a>
+        <a href="tel:183">Psikolojik Destek: 183</a>
+        <a href="tel:112">Acil: 112</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 SıfırNoktası · Teknofest 2026 Sosyal Girişim</p>
+    <p>Yapay zeka destekli proaktif sağlık</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
