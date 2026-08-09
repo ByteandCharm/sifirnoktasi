@@ -243,31 +243,12 @@
     }
   }
 
-  /* ---------- APK YOKSA BILGI ---------- */
+  /* ---------- APK INDIRME ---------- */
   const apkBtn = $('#apkBtn');
   if (apkBtn) {
-    apkBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const dialog = document.createElement('div');
-      dialog.style.cssText = `
-        position: fixed; inset: 0; z-index: 10001; background: rgba(22,32,46,0.6);
-        display: flex; align-items: center; justify-content: center; padding: 20px; cursor: pointer;
-      `;
-      dialog.innerHTML = `
-        <div style="background:#fff; border-radius:20px; max-width:420px; padding:36px; cursor:default; box-shadow:0 40px 90px rgba(0,0,0,0.35);">
-          <p style="font-family:'Syne',sans-serif; font-size:22px; font-weight:800; color:#16202e; margin-bottom:12px;">APK Yapım Aşamasında</p>
-          <p style="font-size:14.5px; line-height:1.7; color:#41536b;">APK dosyası EAS Build ile bulut üzerinde derleniyor ve birkaç dakika içinde bu sayfaya eklenecek. Şimdilik <b>PC &amp; Tüm Cihazlar</b> seçeneğiyle web uygulamasını hemen kurabilirsin — aynı özellikler, sıfır dosya.</p>
-          <button style="margin-top:20px; background:#4a90d9; color:#fff; border:0; padding:13px 26px; border-radius:99px; font-size:15px; font-weight:700; cursor:pointer; width:100%;">Web Uygulamasını Aç →</button>
-        </div>
-      `;
-      document.body.appendChild(dialog);
-      const close = () => dialog.remove();
-      dialog.addEventListener('click', (ev) => {
-        if (ev.target === dialog) close();
-      });
-      $('button', dialog).addEventListener('click', () => {
-        window.location.href = 'app/';
-      });
-    });
+    apkBtn.href = 'downloads/sifirnoktasi-v1.0.0.apk';
+    apkBtn.download = 'sifirnoktasi-v1.0.0.apk';
+    const label = $('.btn-label', apkBtn) || apkBtn;
+    if (label) label.textContent = 'APK\'yı İndir (60 MB)';
   }
 })();

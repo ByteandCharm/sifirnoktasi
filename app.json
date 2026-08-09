@@ -35,8 +35,13 @@
       "baseUrl": "/sifirnoktasi/app"
     },
     "plugins": [
-      "expo-notifications",
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9a39e5f8-fc5d-407f-b4a9-fcb20ebb7309"
+      }
+    },
+    "owner": "byteandcharm"
   }
 }
