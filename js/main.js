@@ -10,35 +10,6 @@
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- PRELOADER ---------- */
-  const preloader = $('#preloader');
-  const counterEl = $('#preloaderCounter');
-  const fillEl = $('#preloaderFill');
-  const counterObj = { val: 0 };
-
-  if (prefersReduced) {
-    preloader.classList.add('done');
-    document.body.classList.remove('no-scroll');
-  } else {
-    document.body.classList.add('no-scroll');
-    gsap.to(counterObj, {
-      val: 100,
-      duration: 1.9,
-      ease: 'power2.inOut',
-      onUpdate: () => {
-        const v = Math.round(counterObj.val);
-        counterEl.textContent = v;
-        fillEl.style.width = v + '%';
-      },
-      onComplete: () => {
-        preloader.classList.add('done');
-        document.body.classList.remove('no-scroll');
-        setTimeout(() => preloader.style.display = 'none', 1000);
-        initHeroAnimations();
-      },
-    });
-  }
-
   /* ---------- HERO ---------- */
   function initHeroAnimations() {
     if (prefersReduced) {
@@ -61,6 +32,9 @@
 
   if (prefersReduced) {
     $$('.reveal-mask, .hero-title .line-inner, .section-title .line-inner').forEach(el => (el.style.opacity = 1));
+  } else {
+    window.addEventListener('load', initHeroAnimations);
+    if (document.readyState === 'complete') initHeroAnimations();
   }
 
   /* ---------- LENIS SMOOTH SCROLL ---------- */
@@ -281,7 +255,7 @@
       `;
       dialog.innerHTML = `
         <div style="background:#fff; border-radius:20px; max-width:420px; padding:36px; cursor:default; box-shadow:0 40px 90px rgba(0,0,0,0.35);">
-          <p style="font-family:'Syne',sans-serif; font-size:22px; font-weight:800; color:#16202e; margin-bottom:12px;">📦 APK Yapım Aşamasında</p>
+          <p style="font-family:'Syne',sans-serif; font-size:22px; font-weight:800; color:#16202e; margin-bottom:12px;">APK Yapım Aşamasında</p>
           <p style="font-size:14.5px; line-height:1.7; color:#41536b;">APK dosyası EAS Build ile bulut üzerinde derleniyor ve birkaç dakika içinde bu sayfaya eklenecek. Şimdilik <b>PC &amp; Tüm Cihazlar</b> seçeneğiyle web uygulamasını hemen kurabilirsin — aynı özellikler, sıfır dosya.</p>
           <button style="margin-top:20px; background:#4a90d9; color:#fff; border:0; padding:13px 26px; border-radius:99px; font-size:15px; font-weight:700; cursor:pointer; width:100%;">Web Uygulamasını Aç →</button>
         </div>
