@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = '/sifirnoktasi/app';
-const indexPath = path.join(__dirname, '..', 'website', 'app', 'index.html');
+const indexPath = path.join(__dirname, '..', 'app', 'index.html');
 
 const headInject = [
   `<meta name="description" content="SıfırNoktası - Dijital bağımlılığın erken evrelerinde tespit edilmesini sağlayan yapay zeka destekli proaktif sağlık uygulaması" />`,
