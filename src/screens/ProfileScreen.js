@@ -1,6 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Switch } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Switch, Linking } from 'react-native';
 import { Colors, Spacing, FontSize, BorderRadius, Shadow } from '../theme';
+
+const APK_URL =
+  'https://byteandcharm.github.io/sifirnoktasi/downloads/sifirnoktasi-v1.0.0.apk';
 
 const ProfileScreen = () => {
   const [notifications, setNotifications] = React.useState(true);
@@ -76,6 +79,27 @@ const ProfileScreen = () => {
             <Text style={styles.menuArrow}>›</Text>
           </TouchableOpacity>
         ))}
+      </View>
+
+      <View style={styles.apkCard}>
+        <View style={styles.apkHeader}>
+          <View style={styles.apkBadge}>
+            <Text style={styles.apkBadgeText}>APK</Text>
+          </View>
+          <View style={styles.apkInfo}>
+            <Text style={styles.apkTitle}>Android APK</Text>
+            <Text style={styles.apkSub}>SıfırNoktası v1.0.0 · 60 MB · Tek dosya</Text>
+          </View>
+        </View>
+        <TouchableOpacity
+          style={styles.apkButton}
+          onPress={() => Linking.openURL(APK_URL).catch(() => {})}
+        >
+          <Text style={styles.apkButtonText}>APK'yı İndir</Text>
+        </TouchableOpacity>
+        <Text style={styles.apkNote}>
+          İndirince: Ayarlar → "Bilinmeyen kaynaklara izin ver" → APK dosyasına dokun ve kur.
+        </Text>
       </View>
 
       <View style={styles.footer}>
@@ -216,6 +240,63 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: Spacing.xl,
     paddingBottom: Spacing.lg,
+  },
+  apkCard: {
+    backgroundColor: Colors.primaryFaded,
+    borderRadius: BorderRadius.lg,
+    padding: Spacing.md,
+    marginHorizontal: Spacing.lg,
+    marginTop: Spacing.lg,
+    ...Shadow.sm,
+  },
+  apkHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: Spacing.md,
+  },
+  apkBadge: {
+    width: 48,
+    height: 48,
+    borderRadius: BorderRadius.md,
+    backgroundColor: Colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: Spacing.md,
+  },
+  apkBadgeText: {
+    fontSize: FontSize.md,
+    fontWeight: '800',
+    color: Colors.white,
+  },
+  apkInfo: {
+    flex: 1,
+  },
+  apkTitle: {
+    fontSize: FontSize.lg,
+    fontWeight: '700',
+    color: Colors.text,
+  },
+  apkSub: {
+    fontSize: FontSize.xs,
+    color: Colors.textSecondary,
+    marginTop: 2,
+  },
+  apkButton: {
+    backgroundColor: Colors.primary,
+    borderRadius: BorderRadius.full,
+    paddingVertical: Spacing.md,
+    alignItems: 'center',
+  },
+  apkButtonText: {
+    fontSize: FontSize.md,
+    fontWeight: '700',
+    color: Colors.white,
+  },
+  apkNote: {
+    fontSize: FontSize.xs,
+    color: Colors.textSecondary,
+    marginTop: Spacing.sm,
+    lineHeight: 16,
   },
   footerText: {
     fontSize: FontSize.sm,
