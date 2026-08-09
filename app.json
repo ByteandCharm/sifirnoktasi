@@ -36,7 +36,17 @@
       "baseUrl": "/sifirnoktasi/app"
     },
     "plugins": [
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#F0F7FF"
+        }
+      ],
+      "expo-system-ui",
+      "./plugins/withMainActivityFix"
     ],
     "extra": {
       "eas": {
