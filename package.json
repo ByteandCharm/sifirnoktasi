@@ -16,6 +16,7 @@
     "@react-navigation/native": "^7.0.0",
     "expo": "~52.0.0",
     "expo-asset": "~11.0.5",
+    "expo-file-system": "~18.0.12",
     "expo-splash-screen": "~0.29.24",
     "expo-status-bar": "~2.0.0",
     "expo-system-ui": "~4.0.9",

@@ -25,6 +25,22 @@ if (global.ErrorUtils && !global.__sifirnoktasiErrorHandler) {
   });
 }
 
+if (!global.__sifirnoktasiCrashCheck) {
+  global.__sifirnoktasiCrashCheck = true;
+  try {
+    const FileSystem = require('expo-file-system');
+    const crashPath = FileSystem.documentDirectory + 'sn_crash.txt';
+    FileSystem.readAsStringAsync(crashPath)
+      .then((text) => {
+        if (text && text.length > 0) {
+          FileSystem.deleteAsync(crashPath).catch(() => {});
+          Alert.alert('Önceki çökme raporu', text.slice(0, 600));
+        }
+      })
+      .catch(() => {});
+  } catch (_) {}
+}
+
 class ErrorBoundary extends React.Component {
   state = { error: null };
 
