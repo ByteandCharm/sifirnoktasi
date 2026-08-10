@@ -2,7 +2,7 @@
   "name": "sifirnoktasi",
   "version": "1.0.0",
   "description": "SıfırNoktası - Dijital Bağımlılığı Önleme ve Psikolojik Dayanıklılık Artırma Uygulaması",
-  "main": "App.js",
+  "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
@@ -28,7 +28,8 @@
     "react-native-web": "~0.19.13"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.0"
+    "@babel/core": "^7.25.0",
+    "puppeteer-core": "^25.5.0"
   },
   "private": true
 }

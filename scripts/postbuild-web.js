@@ -25,6 +25,25 @@ const bodyInject = `
       }
     </script>`;
 
+const BUNDLE_DIR = path.join(__dirname, '..', 'app', '_expo', 'static', 'js', 'web');
+
+function verifyBootstrap() {
+  const files = fs.readdirSync(BUNDLE_DIR).filter((f) => f.endsWith('.js'));
+  const entry = files.find((f) => f.startsWith('AppEntry-'));
+  if (!entry) {
+    throw new Error('Bootstrap bundle (AppEntry-*.js) eksik: ' + files.join(', '));
+  }
+  const combined = files
+    .map((f) => fs.readFileSync(path.join(BUNDLE_DIR, f), 'utf8'))
+    .join('\n');
+  for (const marker of ['registerComponent', 'runApplication', 'document.getElementById']) {
+    if (!combined.includes(marker)) {
+      throw new Error('Bundle icinde eksik marker: ' + marker);
+    }
+  }
+  console.log(`postbuild: bootstrap dogrulandi (${files.join(', ')})`);
+}
+
 try {
   let html = fs.readFileSync(indexPath, 'utf8');
 
@@ -38,6 +57,7 @@ try {
 
   fs.writeFileSync(indexPath, html, 'utf8');
   console.log('postbuild: PWA head/body enjeksiyonu tamamlandi.');
+  verifyBootstrap();
 } catch (err) {
   console.error('postbuild HATASI:', err.message);
   process.exit(1);
